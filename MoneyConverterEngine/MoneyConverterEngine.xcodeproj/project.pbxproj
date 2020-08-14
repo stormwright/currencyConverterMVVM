@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		16DDC2A624E6C754006D508D /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */; };
-		16DDC2AB24E6C754006D508D /* MoneyConverterEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2AA24E6C754006D508D /* MoneyConverterEngineTests.swift */; };
-		16DDC2AD24E6C754006D508D /* MoneyConverterEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 16DDC29F24E6C754006D508D /* MoneyConverterEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */; };
+		16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +24,11 @@
 
 /* Begin PBXFileReference section */
 		16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneyConverterEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		16DDC29F24E6C754006D508D /* MoneyConverterEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyConverterEngine.h; sourceTree = "<group>"; };
 		16DDC2A024E6C754006D508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16DDC2A524E6C754006D508D /* MoneyConverterEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyConverterEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		16DDC2AA24E6C754006D508D /* MoneyConverterEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyConverterEngineTests.swift; sourceTree = "<group>"; };
 		16DDC2AC24E6C754006D508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadRatesFeedFromRemoteUseCases.swift; sourceTree = "<group>"; };
+		16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,6 @@
 		16DDC29E24E6C754006D508D /* MoneyConverterEngine */ = {
 			isa = PBXGroup;
 			children = (
-				16DDC29F24E6C754006D508D /* MoneyConverterEngine.h */,
 				16DDC2A024E6C754006D508D /* Info.plist */,
 			);
 			path = MoneyConverterEngine;
@@ -80,10 +79,27 @@
 		16DDC2A924E6C754006D508D /* MoneyConverterEngineTests */ = {
 			isa = PBXGroup;
 			children = (
-				16DDC2AA24E6C754006D508D /* MoneyConverterEngineTests.swift */,
+				16DDC2B824E6D257006D508D /* Helpers */,
+				16DDC2BB24E6D2C7006D508D /* Rates API */,
 				16DDC2AC24E6C754006D508D /* Info.plist */,
 			);
 			path = MoneyConverterEngineTests;
+			sourceTree = "<group>";
+		};
+		16DDC2B824E6D257006D508D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		16DDC2BB24E6D2C7006D508D /* Rates API */ = {
+			isa = PBXGroup;
+			children = (
+				16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */,
+			);
+			path = "Rates API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +109,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16DDC2AD24E6C754006D508D /* MoneyConverterEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,13 +159,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1160;
-				ORGANIZATIONNAME = Mikayil;
+				ORGANIZATIONNAME = Stormwright;
 				TargetAttributes = {
 					16DDC29B24E6C754006D508D = {
 						CreatedOnToolsVersion = 11.6;
 					};
 					16DDC2A424E6C754006D508D = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -202,7 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16DDC2AB24E6C754006D508D /* MoneyConverterEngineTests.swift in Sources */,
+				16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */,
+				16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +365,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MoneyConverterEngine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -356,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.epistaim.MoneyConverterEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -372,6 +391,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MoneyConverterEngine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -380,6 +400,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.epistaim.MoneyConverterEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -387,6 +408,7 @@
 		16DDC2B424E6C754006D508D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SBMHDYBNDN;
@@ -398,6 +420,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.epistaim.MoneyConverterEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -405,6 +428,7 @@
 		16DDC2B524E6C754006D508D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SBMHDYBNDN;
