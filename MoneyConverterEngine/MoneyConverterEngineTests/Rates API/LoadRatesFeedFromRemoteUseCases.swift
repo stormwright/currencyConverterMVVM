@@ -125,8 +125,6 @@ private extension Array where Element == RemoteFeedRate {
 
 struct RemoteFeedRate: Decodable {
     let code: String
-    let alphaCode: String
-    let numericCode: String
     let name: String
     let rate: Double
     let date: String
@@ -136,12 +134,15 @@ struct RemoteFeedRate: Decodable {
 
 final class FeedRatesMapper {
     
+    private struct Root: Decodable {
+        let rates: [RemoteFeedRate]
+    }
+    
     static func map(_ data: Data, from response: HTTPURLResponse) throws -> [RemoteFeedRate] {
-        guard response.isOK, let rates = try? JSONDecoder().decode([RemoteFeedRate].self, from: data) else {
+        guard response.isOK, let root = try? JSONDecoder().decode(Root.self, from: data) else {
             throw RemoteRatesFeedLoader.Error.invalidData
         }
-
-        return rates
+        return root.rates
     }
 }
 
@@ -211,6 +212,30 @@ class LoadRatesFeedFromRemoteUseCases: XCTestCase {
         })
     }
     
+    func test_load_deliversNoRatesOn200HTTPResponseWithEmptyJSONList() {
+        let (sut, client) = makeSUT()
+
+        expect(sut, toCompleteWith: .success([]), when: {
+            let emptyListJSON = makeItemsJSON([])
+            client.complete(withStatusCode: 200, data: emptyListJSON)
+        })
+    }
+    
+    func test_load_deliversRatesOn200HTTPResponseWithJSONRates() {
+        let (sut, client) = makeSUT()
+        
+        let item1 = makeItem(code: "EUR", name: "Euro", rate: 0.84665715551541, date: "Fri, 28 Aug 2020 00:00:01 GMT", inverseRate: 1.1811156304363)
+        
+        let item2 = makeItem(code: "GBP", name: "British Pound Sterling", rate: 0.75783966587706, date: "Fri, 28 Aug 2020 00:00:01 GMT", inverseRate: 1.3195403263073)
+        
+        let items = [item1.model, item2.model]
+        
+        expect(sut, toCompleteWith: .success(items), when: {
+            let json = makeItemsJSON([item1.json, item2.json])
+            client.complete(withStatusCode: 200, data: json)
+        })
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteRatesFeedLoader, client: HTTPClientSpy) {
@@ -225,8 +250,22 @@ class LoadRatesFeedFromRemoteUseCases: XCTestCase {
         return .failure(error)
     }
     
+    private func makeItem(code: String, name: String, rate: Double, date: String, inverseRate: Double) -> (model: FeedRate, json: [String: Any]) {
+        let item = FeedRate(code: code, name: name, rate: rate, date: date, inverseRate: inverseRate)
+        
+        let json = [
+            "code": code,
+            "name": name,
+            "rate": rate,
+            "date": date,
+            "inverseRate": inverseRate
+        ].compactMapValues { $0 }
+        
+        return (item, json)
+    }
+    
     private func makeItemsJSON(_ rates: [[String: Any]]) -> Data {
-        let json = [rates]
+        let json = ["rates": rates]
         return try! JSONSerialization.data(withJSONObject: json)
     }
     
