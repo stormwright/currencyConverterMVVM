@@ -20,6 +20,7 @@
 		1B74030C24FAE8A9001384AF /* RemoteFeedRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74030B24FAE8A9001384AF /* RemoteFeedRate.swift */; };
 		1B74030F24FAE8F2001384AF /* HTTPURLResponse+StatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74030E24FAE8F2001384AF /* HTTPURLResponse+StatusCodes.swift */; };
 		1B74031124FAE943001384AF /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74031024FAE943001384AF /* URLSessionHTTPClient.swift */; };
+		1B74031324FAEAC8001384AF /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74031224FAEAC8001384AF /* URLProtocolStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1B74030B24FAE8A9001384AF /* RemoteFeedRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedRate.swift; sourceTree = "<group>"; };
 		1B74030E24FAE8F2001384AF /* HTTPURLResponse+StatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+StatusCodes.swift"; sourceTree = "<group>"; };
 		1B74031024FAE943001384AF /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		1B74031224FAEAC8001384AF /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				1B7402FD24FAE239001384AF /* HTTPClientSpy.swift */,
+				1B74031224FAEAC8001384AF /* URLProtocolStub.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				1B7402FE24FAE239001384AF /* HTTPClientSpy.swift in Sources */,
 				1B7402FB24FAD40E001384AF /* URLSessionHTTPClientTests.swift in Sources */,
 				16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				1B74031324FAEAC8001384AF /* URLProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
