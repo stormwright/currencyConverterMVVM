@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MoneyConverterEngine
 
 class HTTPClientSpy: HTTPClient {
     
@@ -40,5 +41,5 @@ class HTTPClientSpy: HTTPClient {
             headerFields: nil
         )!
         messages[index].completion(.success((data, response)))
-    }    
+    }
 }
