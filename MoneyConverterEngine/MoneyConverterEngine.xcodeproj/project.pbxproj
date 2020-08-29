@@ -10,6 +10,7 @@
 		16DDC2A624E6C754006D508D /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */; };
 		16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */; };
 		16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
+		1B7402FB24FAD40E001384AF /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7402FA24FAD40E001384AF /* URLSessionHTTPClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		16DDC2AC24E6C754006D508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadRatesFeedFromRemoteUseCases.swift; sourceTree = "<group>"; };
 		16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		1B7402FA24FAD40E001384AF /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */,
+				1B7402FA24FAD40E001384AF /* URLSessionHTTPClientTests.swift */,
 			);
 			path = "Rates API";
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */,
+				1B7402FB24FAD40E001384AF /* URLSessionHTTPClientTests.swift in Sources */,
 				16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
