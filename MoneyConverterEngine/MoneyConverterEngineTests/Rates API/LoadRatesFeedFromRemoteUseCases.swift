@@ -7,28 +7,7 @@
 //
 
 import XCTest
-
-protocol RatesFeedLoader {
-    typealias Result = Swift.Result<[FeedRate], Error>
-    
-    func load(completion: @escaping (Result) -> Void)
-}
-
-struct FeedRate: Equatable {
-    let code: String
-    let name: String
-    let rate: Double
-    let date: String
-    let inverseRate: Double
-    
-    init(code: String, name: String, rate: Double, date: String, inverseRate: Double) {
-        self.code = code
-        self.name = name
-        self.rate = rate
-        self.date = date
-        self.inverseRate = inverseRate
-    }
-}
+import MoneyConverterEngine
 
 protocol HTTPClientTask {
     func cancel()
@@ -56,7 +35,7 @@ class RemoteRatesFeedLoader: RatesFeedLoader {
         self.client = client
     }
     
-    typealias Result = RatesFeedLoader.Result
+    public typealias Result = RatesFeedLoader.Result
     
     func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { [weak self] (result) in

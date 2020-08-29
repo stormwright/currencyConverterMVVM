@@ -12,6 +12,8 @@
 		16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
 		1B7402FB24FAD40E001384AF /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7402FA24FAD40E001384AF /* URLSessionHTTPClientTests.swift */; };
 		1B7402FE24FAE239001384AF /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7402FD24FAE239001384AF /* HTTPClientSpy.swift */; };
+		1B74030024FAE6A7001384AF /* RatesFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7402FF24FAE6A7001384AF /* RatesFeedLoader.swift */; };
+		1B74030224FAE6E0001384AF /* FeedRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74030124FAE6E0001384AF /* FeedRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		1B7402FA24FAD40E001384AF /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		1B7402FD24FAE239001384AF /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		1B7402FF24FAE6A7001384AF /* RatesFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFeedLoader.swift; sourceTree = "<group>"; };
+		1B74030124FAE6E0001384AF /* FeedRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				16DDC2A024E6C754006D508D /* Info.plist */,
+				1B7402FF24FAE6A7001384AF /* RatesFeedLoader.swift */,
+				1B74030124FAE6E0001384AF /* FeedRate.swift */,
 			);
 			path = MoneyConverterEngine;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 				TargetAttributes = {
 					16DDC29B24E6C754006D508D = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1130;
 					};
 					16DDC2A424E6C754006D508D = {
 						CreatedOnToolsVersion = 11.6;
@@ -225,6 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B74030024FAE6A7001384AF /* RatesFeedLoader.swift in Sources */,
+				1B74030224FAE6E0001384AF /* FeedRate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +381,7 @@
 		16DDC2B124E6C754006D508D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -391,6 +401,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -398,6 +409,7 @@
 		16DDC2B224E6C754006D508D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -424,6 +436,7 @@
 		16DDC2B424E6C754006D508D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -444,6 +457,7 @@
 		16DDC2B524E6C754006D508D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
