@@ -24,6 +24,16 @@ class CacheRatesFeedUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
     }
     
+    func test_save_doesNotRequestCacheInsertOnDeleteError() {
+        let (sut, store) = makeSUT()
+        let deletionError = anyNSError()
+        
+        sut.save(uniqueRatesFeed().models) { _ in }
+        store.completeDelete(with: deletionError)
+        
+        XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalRatesFeedLoader, store: RatesFeedStoreSpy) {
@@ -96,13 +106,21 @@ class RatesFeedStoreSpy: RatesFeedStore {
     
     private(set) var receivedMessages = [ReceivedMessage]()
     
-    private var deletionCompletions = [DeleteCompletion]()
+    private var deleteCompletions = [DeleteCompletion]()
     private var insertionCompletions = [InsertCompletion]()
     private var retrievalCompletions = [RetrieveCompletion]()
     
     func deleteCachedFeed(completion: @escaping DeleteCompletion) {
-        deletionCompletions.append(completion)
+        deleteCompletions.append(completion)
         receivedMessages.append(.deleteCachedFeed)
+    }
+    
+    func completeDelete(with error: Error, at index: Int = 0) {
+        deleteCompletions[index](.failure(error))
+    }
+    
+    func completeDeleteSuccessfully(at index: Int = 0) {
+        deleteCompletions[index](.success(()))
     }
     
     func insert(_ feed: [LocalFeedRate], timestamp: Date, completion: @escaping InsertCompletion) {
