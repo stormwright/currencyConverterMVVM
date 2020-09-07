@@ -34,6 +34,17 @@ class CacheRatesFeedUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
     }
     
+    func test_save_requestsNewCacheInsertWithTimestampOnSuccessfulDeleteOperation() {
+        let timestamp = Date()
+        let feed = uniqueRatesFeed()
+        let (sut, store) = makeSUT(currentDate: { timestamp })
+        
+        sut.save(feed.models) { _ in }
+        store.completeDeleteSuccessfully()
+        
+        XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed, .insert(feed.local, timestamp)])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalRatesFeedLoader, store: RatesFeedStoreSpy) {
@@ -107,7 +118,7 @@ class RatesFeedStoreSpy: RatesFeedStore {
     private(set) var receivedMessages = [ReceivedMessage]()
     
     private var deleteCompletions = [DeleteCompletion]()
-    private var insertionCompletions = [InsertCompletion]()
+    private var insertCompletions = [InsertCompletion]()
     private var retrievalCompletions = [RetrieveCompletion]()
     
     func deleteCachedFeed(completion: @escaping DeleteCompletion) {
@@ -124,7 +135,8 @@ class RatesFeedStoreSpy: RatesFeedStore {
     }
     
     func insert(_ feed: [LocalFeedRate], timestamp: Date, completion: @escaping InsertCompletion) {
-        
+        insertCompletions.append(completion)
+        receivedMessages.append(.insert(feed, timestamp))
     }
     
     func retrieve(completion: @escaping RetrieveCompletion) {
@@ -156,11 +168,32 @@ extension LocalRatesFeedLoader: FeedCache {
     typealias SaveResult = FeedCache.Result
     
     func save(_ feed: [FeedRate], completion: @escaping (SaveResult) -> Void) {
-        store.deleteCachedFeed { (result) in
+        store.deleteCachedFeed { [weak self] (deleteResult) in
+            guard let self = self else { return }
             
+            switch deleteResult {
+            case .success:
+                self.cache(feed, with: completion)
+            
+            case let .failure(error):
+                completion(.failure(error))
+            }
         }
     }
+    
+    private func cache(_ feed: [FeedRate], with completion: @escaping (SaveResult) -> Void) {
+        store.insert(feed.toLocal(), timestamp: currentDate()) { [weak self] insertionResult in
+            guard self != nil else { return }
+            
+            completion(insertionResult)
+        }
+    }
+}
 
+private extension Array where Element == FeedRate {
+    func toLocal() -> [LocalFeedRate] {
+        return map { LocalFeedRate(code: $0.code, name: $0.name, rate: $0.rate, date: $0.date, inverseRate: $0.inverseRate) }
+    }
 }
 
 protocol FeedCache {
