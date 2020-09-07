@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163CE04925068880002E9025 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04825068880002E9025 /* SharedTestHelpers.swift */; };
 		16DDC2A624E6C754006D508D /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */; };
 		16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */; };
 		16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		163CE04825068880002E9025 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneyConverterEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DDC2A024E6C754006D508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16DDC2A524E6C754006D508D /* MoneyConverterEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyConverterEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */,
+				163CE04825068880002E9025 /* SharedTestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			files = (
 				16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */,
 				1B7402FE24FAE239001384AF /* HTTPClientSpy.swift in Sources */,
+				163CE04925068880002E9025 /* SharedTestHelpers.swift in Sources */,
 				1B7402FB24FAD40E001384AF /* URLSessionHTTPClientTests.swift in Sources */,
 				16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				1B74031324FAEAC8001384AF /* URLProtocolStub.swift in Sources */,

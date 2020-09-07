@@ -2,8 +2,7 @@
 //  LoadRatesFeedFromRemoteUseCases.swift
 //  MoneyConverterEngineTests
 //
-//  Created by Mikayil on 14/08/2020.
-//  Copyright © 2020 Mikayil. All rights reserved.
+//  Copyright © 2020 Stormwright. All rights reserved.
 //
 
 import XCTest

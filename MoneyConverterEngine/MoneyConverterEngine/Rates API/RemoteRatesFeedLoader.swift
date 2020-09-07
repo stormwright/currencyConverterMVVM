@@ -30,7 +30,7 @@ public final class RemoteRatesFeedLoader: RatesFeedLoader {
             guard self != nil else { return }
             
             switch result {
-            case let .success(data, response):
+            case let .success((data, response)):
                 completion(RemoteRatesFeedLoader.map(data, from: response))
                 
             case .failure:
