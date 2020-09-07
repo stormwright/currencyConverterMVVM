@@ -2,7 +2,6 @@
 //  RemoteRatesFeedLoader.swift
 //  MoneyConverterEngine
 //
-//  Created by Mammadov, Mikayil (Proagrica) on 29/08/2020.
 //  Copyright © 2020 Stormwright. All rights reserved.
 //
 

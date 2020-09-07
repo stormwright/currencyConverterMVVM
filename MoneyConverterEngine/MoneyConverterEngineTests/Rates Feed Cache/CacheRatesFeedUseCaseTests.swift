@@ -16,6 +16,14 @@ class CacheRatesFeedUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [])
     }
     
+    func test_save_requestsCacheDelete() {
+        let (sut, store) = makeSUT()
+
+        sut.save(uniqueRatesFeed().models) { _ in }
+
+        XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalRatesFeedLoader, store: RatesFeedStoreSpy) {
@@ -28,14 +36,28 @@ class CacheRatesFeedUseCaseTests: XCTestCase {
     
 }
 
-struct LocalFeedRate: Equatable {
-    let code: String
-    let name: String
-    let rate: Double
-    let date: String
-    let inverseRate: Double
+func uniqueFeedRateGBP() -> FeedRate {
+    return FeedRate(code: "GBP", name: "British Pound Sterling", rate: 0.75783966587706, date: "Fri, 28 Aug 2020 00:00:01 GMT", inverseRate: 1.3195403263073)
+}
+
+func uniqueFeedRateEUR() -> FeedRate {
+    return FeedRate(code: "EUR", name: "EURO", rate: 0.84665715551541, date: "Fri, 28 Aug 2020 00:00:01 GMT", inverseRate: 1.1811156304363)
+}
+
+func uniqueRatesFeed() -> (models: [FeedRate], local: [LocalFeedRate]) {
+    let models = [uniqueFeedRateGBP(), uniqueFeedRateEUR()]
+    let local = models.map { LocalFeedRate(code: $0.code, name: $0.name, rate: $0.rate, date: $0.date, inverseRate: $0.inverseRate) }
+    return (models, local)
+}
+
+public struct LocalFeedRate: Equatable {
+    public let code: String
+    public let name: String
+    public let rate: Double
+    public let date: String
+    public let inverseRate: Double
     
-    init(code: String, name: String, rate: Double, date: String, inverseRate: Double) {
+    public init(code: String, name: String, rate: Double, date: String, inverseRate: Double) {
         self.code = code
         self.name = name
         self.rate = rate
@@ -74,9 +96,13 @@ class RatesFeedStoreSpy: RatesFeedStore {
     
     private(set) var receivedMessages = [ReceivedMessage]()
     
+    private var deletionCompletions = [DeleteCompletion]()
+    private var insertionCompletions = [InsertCompletion]()
+    private var retrievalCompletions = [RetrieveCompletion]()
     
     func deleteCachedFeed(completion: @escaping DeleteCompletion) {
-        
+        deletionCompletions.append(completion)
+        receivedMessages.append(.deleteCachedFeed)
     }
     
     func insert(_ feed: [LocalFeedRate], timestamp: Date, completion: @escaping InsertCompletion) {
@@ -105,5 +131,22 @@ class LocalRatesFeedLoader: RatesFeedLoader {
     func load(completion: @escaping (LoadResult) -> Void) {
         
     }
- 
+}
+
+extension LocalRatesFeedLoader: FeedCache {
+    
+    typealias SaveResult = FeedCache.Result
+    
+    func save(_ feed: [FeedRate], completion: @escaping (SaveResult) -> Void) {
+        store.deleteCachedFeed { (result) in
+            
+        }
+    }
+
+}
+
+protocol FeedCache {
+    typealias Result = Swift.Result<Void, Error>
+
+    func save(_ feed: [FeedRate], completion: @escaping (Result) -> Void)
 }
