@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		163CE04925068880002E9025 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04825068880002E9025 /* SharedTestHelpers.swift */; };
 		163CE04C25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04B25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift */; };
+		163CE04F2507C23C002E9025 /* RatesFeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04E2507C23C002E9025 /* RatesFeedStoreSpy.swift */; };
 		16DDC2A624E6C754006D508D /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */; };
 		16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */; };
 		16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		163CE04825068880002E9025 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		163CE04B25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRatesFeedUseCaseTests.swift; sourceTree = "<group>"; };
+		163CE04E2507C23C002E9025 /* RatesFeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFeedStoreSpy.swift; sourceTree = "<group>"; };
 		16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneyConverterEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DDC2A024E6C754006D508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16DDC2A524E6C754006D508D /* MoneyConverterEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyConverterEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,9 +81,18 @@
 		163CE04A2506892E002E9025 /* Rates Feed Cache */ = {
 			isa = PBXGroup;
 			children = (
+				163CE04D2507C218002E9025 /* Helpers */,
 				163CE04B25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift */,
 			);
 			path = "Rates Feed Cache";
+			sourceTree = "<group>";
+		};
+		163CE04D2507C218002E9025 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				163CE04E2507C23C002E9025 /* RatesFeedStoreSpy.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		16DDC29224E6C754006D508D = {
@@ -312,6 +323,7 @@
 				1B7402FB24FAD40E001384AF /* URLSessionHTTPClientTests.swift in Sources */,
 				16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				163CE04C25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift in Sources */,
+				163CE04F2507C23C002E9025 /* RatesFeedStoreSpy.swift in Sources */,
 				1B74031324FAEAC8001384AF /* URLProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
