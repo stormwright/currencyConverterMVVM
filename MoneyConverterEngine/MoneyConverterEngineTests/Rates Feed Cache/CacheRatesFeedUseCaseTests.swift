@@ -73,6 +73,19 @@ class CacheRatesFeedUseCaseTests: XCTestCase {
         })
     }
     
+    func test_save_doesNotDeliverDeleteErrorAfterSUTInstanceHasBeenDeallocated() {
+        let store = RatesFeedStoreSpy()
+        var sut: LocalRatesFeedLoader? = LocalRatesFeedLoader(store: store, currentDate: Date.init)
+        
+        var receivedResults = [LocalRatesFeedLoader.SaveResult]()
+        sut?.save(uniqueRatesFeed().models) { receivedResults.append($0) }
+        
+        sut = nil
+        store.completeDelete(with: anyNSError())
+        
+        XCTAssertTrue(receivedResults.isEmpty)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalRatesFeedLoader, store: RatesFeedStoreSpy) {
