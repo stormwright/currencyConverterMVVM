@@ -56,5 +56,9 @@ class RatesFeedStoreSpy: RatesFeedStore {
     func completeRetrieve(with error: Error, at index: Int = 0) {
         retrieveCompletions[index](.failure(error))
     }
+    
+    func completeRetrieveWithEmptyCache(at index: Int = 0) {
+        retrieveCompletions[index](.success(.none))
+    }
 
 }
