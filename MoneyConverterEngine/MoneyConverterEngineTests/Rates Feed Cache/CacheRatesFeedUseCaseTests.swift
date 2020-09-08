@@ -86,6 +86,20 @@ class CacheRatesFeedUseCaseTests: XCTestCase {
         XCTAssertTrue(receivedResults.isEmpty)
     }
     
+    func test_save_doesNotDeliverInsertErrorAfterSUTInstanceHasBeenDeallocated() {
+        let store = RatesFeedStoreSpy()
+        var sut: LocalRatesFeedLoader? = LocalRatesFeedLoader(store: store, currentDate: Date.init)
+        
+        var receivedResults = [LocalRatesFeedLoader.SaveResult]()
+        sut?.save(uniqueRatesFeed().models) { receivedResults.append($0) }
+        
+        store.completeDeleteSuccessfully()
+        sut = nil
+        store.completeInsert(with: anyNSError())
+        
+        XCTAssertTrue(receivedResults.isEmpty)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalRatesFeedLoader, store: RatesFeedStoreSpy) {
