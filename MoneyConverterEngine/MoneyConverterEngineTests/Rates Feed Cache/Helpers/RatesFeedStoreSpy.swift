@@ -53,5 +53,8 @@ class RatesFeedStoreSpy: RatesFeedStore {
         receivedMessages.append(.retrieve)
     }
     
+    func completeRetrieve(with error: Error, at index: Int = 0) {
+        retrieveCompletions[index](.failure(error))
+    }
 
 }
