@@ -60,5 +60,9 @@ class RatesFeedStoreSpy: RatesFeedStore {
     func completeRetrieveWithEmptyCache(at index: Int = 0) {
         retrieveCompletions[index](.success(.none))
     }
+    
+    func completeRetrieve(with feed: [LocalFeedRate], timestamp: Date, at index: Int = 0) {
+        retrieveCompletions[index](.success(CachedFeed(feed: feed, timestamp: timestamp)))
+    }
 
 }
