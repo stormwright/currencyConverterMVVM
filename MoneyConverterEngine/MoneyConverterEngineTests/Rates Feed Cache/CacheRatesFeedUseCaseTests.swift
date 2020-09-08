@@ -54,6 +54,16 @@ class CacheRatesFeedUseCaseTests: XCTestCase {
         })
     }
     
+    func test_save_failsOnInsertError() {
+        let (sut, store) = makeSUT()
+        let insertionError = anyNSError()
+        
+        expect(sut, toCompleteWithError: insertionError, when: {
+            store.completeDeleteSuccessfully()
+            store.completeInsert(with: insertionError)
+        })
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalRatesFeedLoader, store: RatesFeedStoreSpy) {
@@ -161,6 +171,10 @@ class RatesFeedStoreSpy: RatesFeedStore {
     func insert(_ feed: [LocalFeedRate], timestamp: Date, completion: @escaping InsertCompletion) {
         insertCompletions.append(completion)
         receivedMessages.append(.insert(feed, timestamp))
+    }
+    
+    func completeInsert(with error: Error, at index: Int = 0) {
+        insertCompletions[index](.failure(error))
     }
     
     func retrieve(completion: @escaping RetrieveCompletion) {
