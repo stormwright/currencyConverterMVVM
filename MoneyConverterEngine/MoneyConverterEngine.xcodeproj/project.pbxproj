@@ -28,6 +28,7 @@
 		1B74030F24FAE8F2001384AF /* HTTPURLResponse+StatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74030E24FAE8F2001384AF /* HTTPURLResponse+StatusCodes.swift */; };
 		1B74031124FAE943001384AF /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74031024FAE943001384AF /* URLSessionHTTPClient.swift */; };
 		1B74031324FAEAC8001384AF /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74031224FAEAC8001384AF /* URLProtocolStub.swift */; };
+		1BB82F5F2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB82F5E2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		1B74030E24FAE8F2001384AF /* HTTPURLResponse+StatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+StatusCodes.swift"; sourceTree = "<group>"; };
 		1B74031024FAE943001384AF /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		1B74031224FAEAC8001384AF /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		1BB82F5E2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadRatesFeedFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				163CE04D2507C218002E9025 /* Helpers */,
 				163CE04B25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift */,
+				1BB82F5E2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift */,
 			);
 			path = "Rates Feed Cache";
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				163CE04925068880002E9025 /* SharedTestHelpers.swift in Sources */,
 				1B7402FB24FAD40E001384AF /* URLSessionHTTPClientTests.swift in Sources */,
 				16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				1BB82F5F2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift in Sources */,
 				163CE04C25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift in Sources */,
 				163CE04F2507C23C002E9025 /* RatesFeedStoreSpy.swift in Sources */,
 				1B74031324FAEAC8001384AF /* URLProtocolStub.swift in Sources */,
