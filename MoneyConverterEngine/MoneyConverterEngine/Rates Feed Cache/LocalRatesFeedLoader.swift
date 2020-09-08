@@ -20,7 +20,20 @@ public class LocalRatesFeedLoader: RatesFeedLoader {
     }
     
     public func load(completion: @escaping (LoadResult) -> Void) {
-        
+        store.retrieve { [weak self] (result) in
+            guard let self = self else { return }
+            
+            switch result {
+            case let .failure(error):
+                completion(.failure(error))
+
+            case let .success(.some(cache)) where RatesFeedCachePolicy.validate(cache.timestamp, against: self.currentDate()):
+                completion(.success(cache.feed.toModels()))
+                
+            case .success:
+                completion(.success([]))
+            }
+        }
     }
 }
 
@@ -54,5 +67,11 @@ extension LocalRatesFeedLoader: FeedCache {
 private extension Array where Element == FeedRate {
     func toLocal() -> [LocalFeedRate] {
         return map { LocalFeedRate(code: $0.code, name: $0.name, rate: $0.rate, date: $0.date, inverseRate: $0.inverseRate) }
+    }
+}
+
+private extension Array where Element == LocalFeedRate {
+    func toModels() -> [FeedRate] {
+        return map { FeedRate(code: $0.code, name: $0.name, rate: $0.rate, date: $0.date, inverseRate: $0.inverseRate) }
     }
 }

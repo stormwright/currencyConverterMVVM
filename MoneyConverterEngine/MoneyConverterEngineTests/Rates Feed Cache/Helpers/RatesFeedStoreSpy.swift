@@ -20,7 +20,7 @@ class RatesFeedStoreSpy: RatesFeedStore {
     
     private var deleteCompletions = [DeleteCompletion]()
     private var insertCompletions = [InsertCompletion]()
-    private var retrievalCompletions = [RetrieveCompletion]()
+    private var retrieveCompletions = [RetrieveCompletion]()
     
     func deleteCachedFeed(completion: @escaping DeleteCompletion) {
         deleteCompletions.append(completion)
@@ -49,7 +49,8 @@ class RatesFeedStoreSpy: RatesFeedStore {
     }
     
     func retrieve(completion: @escaping RetrieveCompletion) {
-        
+        retrieveCompletions.append(completion)
+        receivedMessages.append(.retrieve)
     }
     
 
