@@ -125,6 +125,19 @@ class LoadRatesFeedFromCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
+    func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+        let store = RatesFeedStoreSpy()
+        var sut: LocalRatesFeedLoader? = LocalRatesFeedLoader(store: store, currentDate: Date.init)
+        
+        var receivedResults = [LocalRatesFeedLoader.LoadResult]()
+        sut?.load { receivedResults.append($0) }
+        
+        sut = nil
+        store.completeRetrieveWithEmptyCache()
+        
+        XCTAssertTrue(receivedResults.isEmpty)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalRatesFeedLoader, store: RatesFeedStoreSpy) {
