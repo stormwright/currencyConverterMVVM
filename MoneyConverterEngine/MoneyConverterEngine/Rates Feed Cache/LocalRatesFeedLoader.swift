@@ -64,6 +64,27 @@ extension LocalRatesFeedLoader: FeedCache {
     }
 }
 
+extension LocalRatesFeedLoader {
+    public typealias ValidationResult = Result<Void, Error>
+
+    public func validateCache(completion: @escaping (ValidationResult) -> Void) {
+        store.retrieve { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .failure:
+                self.store.deleteCachedFeed(completion: completion)
+                
+            case let .success(.some(cache)) where !RatesFeedCachePolicy.validate(cache.timestamp, against: self.currentDate()):
+                self.store.deleteCachedFeed(completion: completion)
+                
+            case .success:
+                completion(.success(()))
+            }
+        }
+    }
+}
+
 private extension Array where Element == FeedRate {
     func toLocal() -> [LocalFeedRate] {
         return map { LocalFeedRate(code: $0.code, name: $0.name, rate: $0.rate, date: $0.date, inverseRate: $0.inverseRate) }

@@ -1,0 +1,34 @@
+//
+// Copyright © 2020 Stormwright. All rights reserved.
+//
+
+import XCTest
+import MoneyConverterEngine
+
+class ValidateFeedCacheUseCaseTests: XCTestCase {
+    
+    func test_init_doesNotMessageStoreUponCreation() {
+        let (_, store) = makeSUT()
+        
+        XCTAssertEqual(store.receivedMessages, [])
+    }
+    
+    func test_validateCache_deletesCacheOnRetrieveError() {
+        let (sut, store) = makeSUT()
+        
+        sut.validateCache { _ in }
+        store.completeRetrieve(with: anyNSError())
+        
+        XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCachedFeed])
+    }
+    
+    // MARK: - Helpers
+    
+    private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalRatesFeedLoader, store: RatesFeedStoreSpy) {
+        let store = RatesFeedStoreSpy()
+        let sut = LocalRatesFeedLoader(store: store, currentDate: currentDate)
+        trackForMemoryLeaks(store, file: file, line: line)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return (sut, store)
+    }
+}
