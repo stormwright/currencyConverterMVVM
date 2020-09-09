@@ -60,6 +60,17 @@ class LoadRatesFeedFromCacheUseCaseTests: XCTestCase {
         })
     }
     
+    func test_load_deliversNoRatesOnExpiredCache() {
+        let feed = uniqueRatesFeed()
+        let fixedCurrentDate = Date()
+        let expiredTimestamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: -1)
+        let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
+        
+        expect(sut, toCompleteWith: .success([]), when: {
+            store.completeRetrieve(with: feed.local, timestamp: expiredTimestamp)
+        })
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalRatesFeedLoader, store: RatesFeedStoreSpy) {
