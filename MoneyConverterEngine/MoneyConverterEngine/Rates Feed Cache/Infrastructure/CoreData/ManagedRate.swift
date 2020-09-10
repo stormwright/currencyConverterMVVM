@@ -4,7 +4,7 @@
 
 import CoreData
 
-@objc(ManagedFeedImage)
+@objc(ManagedRate)
 class ManagedRate: NSManagedObject {
     @NSManaged var code: String
     @NSManaged var name: String
