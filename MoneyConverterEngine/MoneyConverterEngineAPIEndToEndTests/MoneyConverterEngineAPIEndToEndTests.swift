@@ -26,6 +26,19 @@ class MoneyConverterEngineAPIEndToEndTests: XCTestCase {
         }
     }
     
+    func test_endToEndTestServerGETFeedRateDataResult_matchesFixedTestAccountData() {
+        switch getRatesFeedResult() {
+        case let .success(data)?:
+            XCTAssertFalse(data.isEmpty, "Expected non-empty rates data")
+            
+        case let .failure(error)?:
+            XCTFail("Expected successful rates data result, got \(error) instead")
+            
+        default:
+            XCTFail("Expected successful rates data result, got no result instead")
+        }
+    }
+    
     // MARK: - Helpers
     
     private func getRatesFeedResult(file: StaticString = #file, line: UInt = #line) -> RatesFeedLoader.Result? {
