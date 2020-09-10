@@ -27,6 +27,9 @@
 		163CE072250A2F21002E9025 /* RatesFeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 163CE070250A2F21002E9025 /* RatesFeedStore.xcdatamodeld */; };
 		163CE074250A371E002E9025 /* ManagedRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE073250A371E002E9025 /* ManagedRate.swift */; };
 		163CE076250A37B5002E9025 /* ManagedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE075250A37B5002E9025 /* ManagedCache.swift */; };
+		163CE07E250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE07D250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests.swift */; };
+		163CE080250A4CF3002E9025 /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */; };
+		163CE086250A50FE002E9025 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
 		16DDC2A624E6C754006D508D /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */; };
 		16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */; };
 		16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -46,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		163CE081250A4CF3002E9025 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16DDC29324E6C754006D508D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16DDC29B24E6C754006D508D;
+			remoteInfo = MoneyConverterEngine;
+		};
 		16DDC2A724E6C754006D508D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 16DDC29324E6C754006D508D /* Project object */;
@@ -76,6 +86,9 @@
 		163CE071250A2F21002E9025 /* RatesFeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RatesFeedStore.xcdatamodel; sourceTree = "<group>"; };
 		163CE073250A371E002E9025 /* ManagedRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedRate.swift; sourceTree = "<group>"; };
 		163CE075250A37B5002E9025 /* ManagedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedCache.swift; sourceTree = "<group>"; };
+		163CE07B250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyConverterEngineAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		163CE07D250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyConverterEngineAPIEndToEndTests.swift; sourceTree = "<group>"; };
+		163CE07F250A4CF3002E9025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneyConverterEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DDC2A024E6C754006D508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16DDC2A524E6C754006D508D /* MoneyConverterEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyConverterEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +111,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		163CE078250A4CF3002E9025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				163CE080250A4CF3002E9025 /* MoneyConverterEngine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		16DDC29924E6C754006D508D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,11 +203,21 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		163CE07C250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests */ = {
+			isa = PBXGroup;
+			children = (
+				163CE07D250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests.swift */,
+				163CE07F250A4CF3002E9025 /* Info.plist */,
+			);
+			path = MoneyConverterEngineAPIEndToEndTests;
+			sourceTree = "<group>";
+		};
 		16DDC29224E6C754006D508D = {
 			isa = PBXGroup;
 			children = (
 				16DDC29E24E6C754006D508D /* MoneyConverterEngine */,
 				16DDC2A924E6C754006D508D /* MoneyConverterEngineTests */,
+				163CE07C250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests */,
 				16DDC29D24E6C754006D508D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -196,6 +227,7 @@
 			children = (
 				16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */,
 				16DDC2A524E6C754006D508D /* MoneyConverterEngineTests.xctest */,
+				163CE07B250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,6 +326,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		163CE07A250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 163CE083250A4CF3002E9025 /* Build configuration list for PBXNativeTarget "MoneyConverterEngineAPIEndToEndTests" */;
+			buildPhases = (
+				163CE077250A4CF3002E9025 /* Sources */,
+				163CE078250A4CF3002E9025 /* Frameworks */,
+				163CE079250A4CF3002E9025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				163CE082250A4CF3002E9025 /* PBXTargetDependency */,
+			);
+			name = MoneyConverterEngineAPIEndToEndTests;
+			productName = MoneyConverterEngineAPIEndToEndTests;
+			productReference = 163CE07B250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		16DDC29B24E6C754006D508D /* MoneyConverterEngine */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16DDC2B024E6C754006D508D /* Build configuration list for PBXNativeTarget "MoneyConverterEngine" */;
@@ -336,10 +386,13 @@
 		16DDC29324E6C754006D508D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1170;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = Stormwright;
 				TargetAttributes = {
+					163CE07A250A4CF3002E9025 = {
+						CreatedOnToolsVersion = 11.7;
+					};
 					16DDC29B24E6C754006D508D = {
 						CreatedOnToolsVersion = 11.6;
 						LastSwiftMigration = 1130;
@@ -365,11 +418,19 @@
 			targets = (
 				16DDC29B24E6C754006D508D /* MoneyConverterEngine */,
 				16DDC2A424E6C754006D508D /* MoneyConverterEngineTests */,
+				163CE07A250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		163CE079250A4CF3002E9025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		16DDC29A24E6C754006D508D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,6 +448,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		163CE077250A4CF3002E9025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				163CE07E250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests.swift in Sources */,
+				163CE086250A50FE002E9025 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		16DDC29824E6C754006D508D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,6 +509,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		163CE082250A4CF3002E9025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16DDC29B24E6C754006D508D /* MoneyConverterEngine */;
+			targetProxy = 163CE081250A4CF3002E9025 /* PBXContainerItemProxy */;
+		};
 		16DDC2A824E6C754006D508D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 16DDC29B24E6C754006D508D /* MoneyConverterEngine */;
@@ -447,6 +522,44 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		163CE084250A4CF3002E9025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SBMHDYBNDN;
+				INFOPLIST_FILE = MoneyConverterEngineAPIEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epistaim.MoneyConverterEngine.MoneyConverterEngineAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		163CE085250A4CF3002E9025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SBMHDYBNDN;
+				INFOPLIST_FILE = MoneyConverterEngineAPIEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epistaim.MoneyConverterEngine.MoneyConverterEngineAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		16DDC2AE24E6C754006D508D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -665,6 +778,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		163CE083250A4CF3002E9025 /* Build configuration list for PBXNativeTarget "MoneyConverterEngineAPIEndToEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				163CE084250A4CF3002E9025 /* Debug */,
+				163CE085250A4CF3002E9025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		16DDC29624E6C754006D508D /* Build configuration list for PBXProject "MoneyConverterEngine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
