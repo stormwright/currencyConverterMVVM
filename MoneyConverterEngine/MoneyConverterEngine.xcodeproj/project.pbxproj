@@ -44,6 +44,9 @@
 		1B74030F24FAE8F2001384AF /* HTTPURLResponse+StatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74030E24FAE8F2001384AF /* HTTPURLResponse+StatusCodes.swift */; };
 		1B74031124FAE943001384AF /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74031024FAE943001384AF /* URLSessionHTTPClient.swift */; };
 		1B74031324FAEAC8001384AF /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74031224FAEAC8001384AF /* URLProtocolStub.swift */; };
+		1B768773250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B768772250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests.swift */; };
+		1B768779250F779200AF4711 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04825068880002E9025 /* SharedTestHelpers.swift */; };
+		1B76877A250F77D600AF4711 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
 		1BB82F5F2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB82F5E2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift */; };
 		1BB82F612507D46100E2D911 /* RatesFeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB82F602507D46100E2D911 /* RatesFeedCachePolicy.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +109,9 @@
 		1B74030E24FAE8F2001384AF /* HTTPURLResponse+StatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+StatusCodes.swift"; sourceTree = "<group>"; };
 		1B74031024FAE943001384AF /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		1B74031224FAEAC8001384AF /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		1B768770250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyConverterEngineCacheIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B768772250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyConverterEngineCacheIntegrationTests.swift; sourceTree = "<group>"; };
+		1B768774250F744F00AF4711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BB82F5E2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadRatesFeedFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		1BB82F602507D46100E2D911 /* RatesFeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFeedCachePolicy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +137,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				16DDC2A624E6C754006D508D /* MoneyConverterEngine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B76876D250F744E00AF4711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +231,7 @@
 				16DDC29E24E6C754006D508D /* MoneyConverterEngine */,
 				16DDC2A924E6C754006D508D /* MoneyConverterEngineTests */,
 				163CE07C250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests */,
+				1B768771250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests */,
 				16DDC29D24E6C754006D508D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -228,6 +242,7 @@
 				16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */,
 				16DDC2A524E6C754006D508D /* MoneyConverterEngineTests.xctest */,
 				163CE07B250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests.xctest */,
+				1B768770250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,6 +328,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		1B768771250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B768772250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests.swift */,
+				1B768774250F744F00AF4711 /* Info.plist */,
+			);
+			path = MoneyConverterEngineCacheIntegrationTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -380,13 +404,30 @@
 			productReference = 16DDC2A524E6C754006D508D /* MoneyConverterEngineTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		1B76876F250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B768777250F744F00AF4711 /* Build configuration list for PBXNativeTarget "MoneyConverterEngineCacheIntegrationTests" */;
+			buildPhases = (
+				1B76876C250F744E00AF4711 /* Sources */,
+				1B76876D250F744E00AF4711 /* Frameworks */,
+				1B76876E250F744E00AF4711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoneyConverterEngineCacheIntegrationTests;
+			productName = MoneyConverterEngineCacheIntegrationTests;
+			productReference = 1B768770250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		16DDC29324E6C754006D508D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1170;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = Stormwright;
 				TargetAttributes = {
@@ -400,6 +441,9 @@
 					16DDC2A424E6C754006D508D = {
 						CreatedOnToolsVersion = 11.6;
 						LastSwiftMigration = 1160;
+					};
+					1B76876F250F744E00AF4711 = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
@@ -419,6 +463,7 @@
 				16DDC29B24E6C754006D508D /* MoneyConverterEngine */,
 				16DDC2A424E6C754006D508D /* MoneyConverterEngineTests */,
 				163CE07A250A4CF3002E9025 /* MoneyConverterEngineAPIEndToEndTests */,
+				1B76876F250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -439,6 +484,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		16DDC2A324E6C754006D508D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B76876E250F744E00AF4711 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -506,6 +558,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B76876C250F744E00AF4711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B768779250F779200AF4711 /* SharedTestHelpers.swift in Sources */,
+				1B768773250F744E00AF4711 /* MoneyConverterEngineCacheIntegrationTests.swift in Sources */,
+				1B76877A250F77D600AF4711 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -529,6 +591,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SBMHDYBNDN;
 				INFOPLIST_FILE = MoneyConverterEngineAPIEndToEndTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -548,6 +611,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SBMHDYBNDN;
 				INFOPLIST_FILE = MoneyConverterEngineAPIEndToEndTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -743,6 +807,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SBMHDYBNDN;
 				INFOPLIST_FILE = MoneyConverterEngineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -764,6 +829,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SBMHDYBNDN;
 				INFOPLIST_FILE = MoneyConverterEngineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -772,6 +838,49 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.epistaim.MoneyConverterEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1B768775250F744F00AF4711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SBMHDYBNDN;
+				INFOPLIST_FILE = MoneyConverterEngineCacheIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epistaim.MoneyConverterEngine.MoneyConverterEngineCacheIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B768776250F744F00AF4711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SBMHDYBNDN;
+				INFOPLIST_FILE = MoneyConverterEngineCacheIntegrationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.epistaim.MoneyConverterEngine.MoneyConverterEngineCacheIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -810,6 +919,15 @@
 			buildConfigurations = (
 				16DDC2B424E6C754006D508D /* Debug */,
 				16DDC2B524E6C754006D508D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B768777250F744F00AF4711 /* Build configuration list for PBXNativeTarget "MoneyConverterEngineCacheIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B768775250F744F00AF4711 /* Debug */,
+				1B768776250F744F00AF4711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
