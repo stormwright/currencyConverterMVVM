@@ -46,6 +46,17 @@ class MoneyConverterEngineCacheIntegrationTests: XCTestCase {
         expect(feedLoaderToPerformSave, toLoad: feed)
     }
     
+    func test_validateFeedCache_deletesFeedSavedInADistantPast() {
+        let feedLoaderToPerformSave = makeRatesFeedLoader(currentDate: .distantPast)
+        let feedLoaderToPerformValidation = makeRatesFeedLoader(currentDate: Date())
+        let feed = uniqueRatesFeed().models
+        
+        save(feed, with: feedLoaderToPerformSave)
+        validateCache(with: feedLoaderToPerformValidation)
+
+        expect(feedLoaderToPerformSave, toLoad: [])
+    }
+    
     // MARK: - Helpers
     
     private func makeRatesFeedLoader(currentDate: Date = Date(), file: StaticString = #file, line: UInt = #line) -> LocalRatesFeedLoader {
