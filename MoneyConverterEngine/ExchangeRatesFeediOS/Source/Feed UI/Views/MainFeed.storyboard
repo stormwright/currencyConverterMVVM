@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Feed View Controller-->
         <scene sceneID="OeU-xd-Mrj">
             <objects>
-                <viewController id="18g-jy-53o" sceneMemberID="viewController">
+                <viewController id="18g-jy-53o" customClass="MainFeedViewController" customModule="ExchangeRatesFeediOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vjl-yv-blX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,6 +105,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ztq-N9-G9K"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="NUP-9k-wEm" id="NSc-cb-y5w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qav-nW-nwL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
