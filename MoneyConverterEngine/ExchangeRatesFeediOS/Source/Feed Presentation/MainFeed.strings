@@ -6,3 +6,4 @@
 */
 
 "MAIN_VIEW_TITLE" = "USD rates";
+"FEED_VIEW_DISPLAY_ERROR" = "ERROR: Exchange rates can't be displayed";

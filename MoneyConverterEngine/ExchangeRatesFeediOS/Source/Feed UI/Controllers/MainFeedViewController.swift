@@ -12,6 +12,8 @@ public final class MainFeedViewController: UIViewController, UITableViewDelegate
         }
     }
     
+    @IBOutlet var errorView: ErrorView?
+    
     var viewModel: MainFeedViewModel? {
         didSet {
             bind()
@@ -27,7 +29,15 @@ public final class MainFeedViewController: UIViewController, UITableViewDelegate
     }
     
     private func bind() {
+        viewModel?.onLoadingStateChange = { [weak self] isLoading in
+            if isLoading {
+                self?.errorView?.hideMessage()
+            }            
+        }
         
+        viewModel?.onErrorLoad = { [weak self] errorMessage in
+            self?.errorView?.show(message: errorMessage)
+        }
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

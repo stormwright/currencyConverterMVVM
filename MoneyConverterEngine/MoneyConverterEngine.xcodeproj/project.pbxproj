@@ -62,6 +62,8 @@
 		1B76877A250F77D600AF4711 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
 		1BB82F5F2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB82F5E2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift */; };
 		1BB82F612507D46100E2D911 /* RatesFeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB82F602507D46100E2D911 /* RatesFeedCachePolicy.swift */; };
+		1BFB79202510F33C00EDB9B5 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB791F2510F33C00EDB9B5 /* ErrorView.swift */; };
+		1BFB79222510FB5100EDB9B5 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB79212510FB5100EDB9B5 /* Localized.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +156,8 @@
 		1B768774250F744F00AF4711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BB82F5E2507CF4300E2D911 /* LoadRatesFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadRatesFeedFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		1BB82F602507D46100E2D911 /* RatesFeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFeedCachePolicy.swift; sourceTree = "<group>"; };
+		1BFB791F2510F33C00EDB9B5 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		1BFB79212510FB5100EDB9B5 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +329,7 @@
 				163E5518250F9D8A0039D048 /* MainFeedViewModel.swift */,
 				161233792510BC3700263D40 /* ExchangeRateCellViewModel.swift */,
 				163E5516250F9D0A0039D048 /* MainFeed.strings */,
+				1BFB79212510FB5100EDB9B5 /* Localized.swift */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 			children = (
 				1612337B2510D2D100263D40 /* Helpers */,
 				161233752510BA9E00263D40 /* ExchangeRateCell.swift */,
+				1BFB791F2510F33C00EDB9B5 /* ErrorView.swift */,
 				163E551A250FA2E50039D048 /* MainFeed.storyboard */,
 				163E551C250FAFBF0039D048 /* MainFeed.xcassets */,
 			);
@@ -768,9 +774,11 @@
 				1612337A2510BC3700263D40 /* ExchangeRateCellViewModel.swift in Sources */,
 				161233782510BBC000263D40 /* ExchangeRateCellController.swift in Sources */,
 				161233812510E75300263D40 /* MainFeedViewController.swift in Sources */,
+				1BFB79222510FB5100EDB9B5 /* Localized.swift in Sources */,
 				1612337F2510D3DC00263D40 /* UIImageView+Animations.swift in Sources */,
 				1612337D2510D2FF00263D40 /* UITableView+Dequeueing.swift in Sources */,
 				163E5519250F9D8A0039D048 /* MainFeedViewModel.swift in Sources */,
+				1BFB79202510F33C00EDB9B5 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

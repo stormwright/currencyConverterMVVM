@@ -25,6 +25,7 @@ final class MainFeedViewModel {
     
     var onLoadingStateChange: Observer<Bool>?
     var onRatesFeedLoad: Observer<[FeedRate]>?
+    var onErrorLoad: Observer<String>?
     
     func load() {
         onLoadingStateChange?(true)
@@ -32,7 +33,7 @@ final class MainFeedViewModel {
             if let feed = try? result.get() {
                 self?.onRatesFeedLoad?(feed)
             } else {
-                // error handling
+                self?.onErrorLoad?(Localized.feedLoadError)
             }
             self?.onLoadingStateChange?(false)
         })
