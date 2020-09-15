@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161233762510BA9E00263D40 /* ExchangeRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161233752510BA9E00263D40 /* ExchangeRateCell.swift */; };
+		161233782510BBC000263D40 /* ExchangeRateCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161233772510BBC000263D40 /* ExchangeRateCellController.swift */; };
+		1612337A2510BC3700263D40 /* ExchangeRateCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161233792510BC3700263D40 /* ExchangeRateCellViewModel.swift */; };
+		1612337D2510D2FF00263D40 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612337C2510D2FF00263D40 /* UITableView+Dequeueing.swift */; };
+		1612337F2510D3DC00263D40 /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612337E2510D3DC00263D40 /* UIImageView+Animations.swift */; };
 		163CE04925068880002E9025 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04825068880002E9025 /* SharedTestHelpers.swift */; };
 		163CE04C25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04B25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift */; };
 		163CE04F2507C23C002E9025 /* RatesFeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04E2507C23C002E9025 /* RatesFeedStoreSpy.swift */; };
@@ -90,6 +95,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161233752510BA9E00263D40 /* ExchangeRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCell.swift; sourceTree = "<group>"; };
+		161233772510BBC000263D40 /* ExchangeRateCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCellController.swift; sourceTree = "<group>"; };
+		161233792510BC3700263D40 /* ExchangeRateCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCellViewModel.swift; sourceTree = "<group>"; };
+		1612337C2510D2FF00263D40 /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
+		1612337E2510D3DC00263D40 /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
 		163CE04825068880002E9025 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		163CE04B25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRatesFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		163CE04E2507C23C002E9025 /* RatesFeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFeedStoreSpy.swift; sourceTree = "<group>"; };
@@ -194,6 +204,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1612337B2510D2D100263D40 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1612337C2510D2FF00263D40 /* UITableView+Dequeueing.swift */,
+				1612337E2510D3DC00263D40 /* UIImageView+Animations.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		163CE04A2506892E002E9025 /* Rates Feed Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				163E5518250F9D8A0039D048 /* MainFeedViewModel.swift */,
+				161233792510BC3700263D40 /* ExchangeRateCellViewModel.swift */,
 				163E5516250F9D0A0039D048 /* MainFeed.strings */,
 			);
 			path = "Feed Presentation";
@@ -327,6 +347,7 @@
 		163E54F7250F8B9F0039D048 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				161233772510BBC000263D40 /* ExchangeRateCellController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -334,6 +355,8 @@
 		163E54F8250F8BAA0039D048 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1612337B2510D2D100263D40 /* Helpers */,
+				161233752510BA9E00263D40 /* ExchangeRateCell.swift */,
 				163E551A250FA2E50039D048 /* MainFeed.storyboard */,
 				163E551C250FAFBF0039D048 /* MainFeed.xcassets */,
 			);
@@ -738,6 +761,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161233762510BA9E00263D40 /* ExchangeRateCell.swift in Sources */,
+				1612337A2510BC3700263D40 /* ExchangeRateCellViewModel.swift in Sources */,
+				161233782510BBC000263D40 /* ExchangeRateCellController.swift in Sources */,
+				1612337F2510D3DC00263D40 /* UIImageView+Animations.swift in Sources */,
+				1612337D2510D2FF00263D40 /* UITableView+Dequeueing.swift in Sources */,
 				163E5519250F9D8A0039D048 /* MainFeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

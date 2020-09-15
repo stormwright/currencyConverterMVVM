@@ -38,7 +38,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="112" id="zi7-S6-dJy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExchangeRateCell" rowHeight="112" id="zi7-S6-dJy" customClass="ExchangeRateCell" customModule="ExchangeRatesFeediOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zi7-S6-dJy" id="SRP-qr-7IU">
@@ -86,6 +86,12 @@
                                                 <constraint firstItem="0Oy-mo-Ltq" firstAttribute="top" secondItem="Knw-64-0E8" secondAttribute="bottom" constant="10" id="y0D-we-9rW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countryFlag" destination="8kB-i3-uDz" id="AUu-Za-ET5"/>
+                                            <outlet property="currencyCode" destination="2kw-Lh-ejh" id="Iv2-Yi-w6z"/>
+                                            <outlet property="currencyName" destination="Knw-64-0E8" id="4Z0-hy-Tc4"/>
+                                            <outlet property="exchangeRate" destination="0Oy-mo-Ltq" id="GLX-9j-mEH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
