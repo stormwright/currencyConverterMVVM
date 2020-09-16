@@ -45,6 +45,7 @@
 		165E206E2512198300AFB974 /* MainFeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E206D2512198300AFB974 /* MainFeedUIComposer.swift */; };
 		165E207025121E6D00AFB974 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E206F25121E6D00AFB974 /* MainQueueDispatchDecorator.swift */; };
 		165E20712512202A00AFB974 /* MainFeed.strings in Resources */ = {isa = PBXBuildFile; fileRef = 165E20732512202A00AFB974 /* MainFeed.strings */; };
+		165E2077251221FB00AFB974 /* MainFeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E2075251221CB00AFB974 /* MainFeedLocalizationTests.swift */; };
 		16DDC2A624E6C754006D508D /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */; };
 		16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */; };
 		16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -139,6 +140,7 @@
 		165E206F25121E6D00AFB974 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		165E20722512202A00AFB974 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainFeed.strings; sourceTree = "<group>"; };
 		165E20742512204F00AFB974 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainFeed.strings; sourceTree = "<group>"; };
+		165E2075251221CB00AFB974 /* MainFeedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedLocalizationTests.swift; sourceTree = "<group>"; };
 		16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneyConverterEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DDC2A024E6C754006D508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16DDC2A524E6C754006D508D /* MoneyConverterEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyConverterEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -397,6 +399,7 @@
 		163E550B250F8F910039D048 /* Feed Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				165E2075251221CB00AFB974 /* MainFeedLocalizationTests.swift */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				163E550A250F8F7F0039D048 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				165E2077251221FB00AFB974 /* MainFeedLocalizationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,7 +1006,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SBMHDYBNDN;
-				INFOPLIST_FILE = ExchangeRatesFeediOSTests/Info.plist;
+				INFOPLIST_FILE = ExchangeRatesFeediOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1023,7 +1027,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SBMHDYBNDN;
-				INFOPLIST_FILE = ExchangeRatesFeediOSTests/Info.plist;
+				INFOPLIST_FILE = ExchangeRatesFeediOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
