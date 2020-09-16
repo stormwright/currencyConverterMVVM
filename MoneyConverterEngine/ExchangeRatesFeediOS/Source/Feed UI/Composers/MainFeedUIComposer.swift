@@ -10,7 +10,8 @@ public final class MainFeedUIComposer {
     
     static func mainFeedComposedWith(ratesLoader: RatesFeedLoader) -> MainFeedViewController {
         
-        let viewModel = MainFeedViewModel(ratesFeedLoader: ratesLoader)
+        let viewModel = MainFeedViewModel(ratesFeedLoader:
+            MainQueueDispatchDecorator(decoratee: ratesLoader))
         
         let mainFeedController = MainFeedViewController.makeWith(viewModel: viewModel)
         

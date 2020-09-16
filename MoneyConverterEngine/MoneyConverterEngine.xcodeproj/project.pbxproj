@@ -44,6 +44,7 @@
 		163E551B250FA2E50039D048 /* MainFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 163E551A250FA2E50039D048 /* MainFeed.storyboard */; };
 		163E551D250FAFC00039D048 /* MainFeed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E551C250FAFBF0039D048 /* MainFeed.xcassets */; };
 		165E206E2512198300AFB974 /* MainFeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E206D2512198300AFB974 /* MainFeedUIComposer.swift */; };
+		165E207025121E6D00AFB974 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E206F25121E6D00AFB974 /* MainQueueDispatchDecorator.swift */; };
 		16DDC2A624E6C754006D508D /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */; };
 		16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */; };
 		16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -136,6 +137,7 @@
 		163E551A250FA2E50039D048 /* MainFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainFeed.storyboard; sourceTree = "<group>"; };
 		163E551C250FAFBF0039D048 /* MainFeed.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainFeed.xcassets; sourceTree = "<group>"; };
 		165E206D2512198300AFB974 /* MainFeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedUIComposer.swift; sourceTree = "<group>"; };
+		165E206F25121E6D00AFB974 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoneyConverterEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DDC2A024E6C754006D508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16DDC2A524E6C754006D508D /* MoneyConverterEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyConverterEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				165E206D2512198300AFB974 /* MainFeedUIComposer.swift */,
+				165E206F25121E6D00AFB974 /* MainQueueDispatchDecorator.swift */,
 			);
 			path = Composers;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165E207025121E6D00AFB974 /* MainQueueDispatchDecorator.swift in Sources */,
 				165E206E2512198300AFB974 /* MainFeedUIComposer.swift in Sources */,
 				161233762510BA9E00263D40 /* ExchangeRateCell.swift in Sources */,
 				1612337A2510BC3700263D40 /* ExchangeRateCellViewModel.swift in Sources */,
