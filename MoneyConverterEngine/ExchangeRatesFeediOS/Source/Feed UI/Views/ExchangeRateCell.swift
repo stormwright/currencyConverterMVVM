@@ -42,4 +42,9 @@ public final class ExchangeRateCell: UITableViewCell {
         exchangeRate.attributedText = quoteText
     }
     
+    func loadFlag(for key: String) {
+        let bundle = Bundle(for: ExchangeRateCell.self)
+        countryFlag.image = UIImage(named: key, in: bundle, compatibleWith: nil)
+    }
+    
 }

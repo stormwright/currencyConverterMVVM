@@ -15,7 +15,7 @@ final class ExchangeRateCellController {
     
     func view(in tableView: UITableView) -> UITableViewCell {
         let cell = bound(tableView.dequeueReusableCell())
-        viewModel.loadFlag()
+//        viewModel.loadFlag()
         return cell
     }
     
@@ -25,13 +25,14 @@ final class ExchangeRateCellController {
     
     private func bound(_ cell: ExchangeRateCell) -> ExchangeRateCell {
         self.cell = cell
-        
-        viewModel.onImageLoad = { [weak self] image in
-            self?.cell?.countryFlag.setImageAnimated(image)
-        }
+//        viewModel.onImageLoad = { [weak self] image in
+//            print(image)
+//            self?.cell?.countryFlag.setImageAnimated(image)
+//        }
         cell.currencyCode.text = viewModel.currencyCode
         cell.currencyName.text = viewModel.currencyName
         cell.displayRoundedRate(originalRate: viewModel.exchangeRate)
+        cell.loadFlag(for: viewModel.currencyCode)
         return cell
     }
     

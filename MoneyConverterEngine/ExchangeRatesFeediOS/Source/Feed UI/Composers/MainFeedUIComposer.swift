@@ -8,13 +8,12 @@ import MoneyConverterEngine
 public final class MainFeedUIComposer {
     private init() {}
     
-    static func mainFeedComposedWith(ratesLoader: RatesFeedLoader) -> MainFeedViewController {
+    public static func mainFeedComposedWith(ratesLoader: RatesFeedLoader) -> MainFeedViewController {
         
         let viewModel = MainFeedViewModel(ratesFeedLoader:
             MainQueueDispatchDecorator(decoratee: ratesLoader))
         
         let mainFeedController = MainFeedViewController.makeWith(viewModel: viewModel)
-        
         viewModel.onRatesFeedLoad = adaptFeedToCellControllers(forwardingTo: mainFeedController)
         
         return mainFeedController
@@ -24,7 +23,7 @@ public final class MainFeedUIComposer {
         return { [weak controller] feed in
             controller?.tableModel = feed.map { model in
                 ExchangeRateCellController(viewModel:
-                    ExchangeRateCellViewModel(model: model, imageTransformer: UIImage.init))
+                    ExchangeRateCellViewModel(model: model))
             }
         }
     }

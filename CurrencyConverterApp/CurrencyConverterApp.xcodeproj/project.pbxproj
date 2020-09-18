@@ -12,6 +12,10 @@
 		16E7EA86251260D90072A0CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E7EA85251260D90072A0CB /* Assets.xcassets */; };
 		16E7EA89251260D90072A0CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E7EA87251260D90072A0CB /* LaunchScreen.storyboard */; };
 		16E7EA94251260D90072A0CB /* CurrencyConverterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E7EA93251260D90072A0CB /* CurrencyConverterAppTests.swift */; };
+		16E7EAA3251267370072A0CB /* ExchangeRatesFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7EAA1251267370072A0CB /* ExchangeRatesFeediOS.framework */; };
+		16E7EAA4251267370072A0CB /* ExchangeRatesFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7EAA1251267370072A0CB /* ExchangeRatesFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		16E7EAA5251267370072A0CB /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7EAA2251267370072A0CB /* MoneyConverterEngine.framework */; };
+		16E7EAA6251267370072A0CB /* MoneyConverterEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7EAA2251267370072A0CB /* MoneyConverterEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +28,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		16E7EAA7251267370072A0CB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				16E7EAA6251267370072A0CB /* MoneyConverterEngine.framework in Embed Frameworks */,
+				16E7EAA4251267370072A0CB /* ExchangeRatesFeediOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		16E7EA79251260D80072A0CB /* CurrencyConverterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E7EA7C251260D80072A0CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +53,8 @@
 		16E7EA8F251260D90072A0CB /* CurrencyConverterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E7EA93251260D90072A0CB /* CurrencyConverterAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterAppTests.swift; sourceTree = "<group>"; };
 		16E7EA95251260D90072A0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16E7EAA1251267370072A0CB /* ExchangeRatesFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ExchangeRatesFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16E7EAA2251267370072A0CB /* MoneyConverterEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MoneyConverterEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16E7EAA5251267370072A0CB /* MoneyConverterEngine.framework in Frameworks */,
+				16E7EAA3251267370072A0CB /* ExchangeRatesFeediOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +83,7 @@
 				16E7EA7B251260D80072A0CB /* CurrencyConverterApp */,
 				16E7EA92251260D90072A0CB /* CurrencyConverterAppTests */,
 				16E7EA7A251260D80072A0CB /* Products */,
+				16E7EAA0251267370072A0CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +117,15 @@
 			path = CurrencyConverterAppTests;
 			sourceTree = "<group>";
 		};
+		16E7EAA0251267370072A0CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16E7EAA1251267370072A0CB /* ExchangeRatesFeediOS.framework */,
+				16E7EAA2251267370072A0CB /* MoneyConverterEngine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,6 +136,7 @@
 				16E7EA75251260D80072A0CB /* Sources */,
 				16E7EA76251260D80072A0CB /* Frameworks */,
 				16E7EA77251260D80072A0CB /* Resources */,
+				16E7EAA7251267370072A0CB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,7 +172,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Stormwright;
 				TargetAttributes = {
 					16E7EA78251260D80072A0CB = {
@@ -254,6 +288,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -314,6 +349,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

@@ -9,11 +9,9 @@ final class ExchangeRateCellViewModel<Image> {
     
     typealias Observer<T> = (T) -> Void
     private let model: FeedRate
-    private let imageTransformer: (Data) -> Image?
     
-    init(model: FeedRate, imageTransformer: @escaping (Data) -> Image?) {
+    init(model: FeedRate) {
         self.model = model
-        self.imageTransformer = imageTransformer
     }
     
     var currencyCode: String {
@@ -34,12 +32,4 @@ final class ExchangeRateCellViewModel<Image> {
     
     var onImageLoad: Observer<Image>?
     
-    func loadFlag() {
-        let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let fileName = model.code
-        let fileURL = documentsUrl.appendingPathComponent(fileName)
-        if let imageData = try? imageTransformer(Data(contentsOf: fileURL)) {
-            onImageLoad?(imageData)
-        }
-    }
 }
