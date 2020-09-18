@@ -50,7 +50,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = UINavigationController(
             rootViewController: MainFeedUIComposer.mainFeedComposedWith(
                 ratesLoader: RatesFeedLoaderWithFallbackComposite(
-                    primary: remoteRatesFeedLoader,
+                    primary: RatesFeedLoaderCacheDecorator(
+                        decoratee: remoteRatesFeedLoader,
+                        cache: localFeedLoader),
                     fallback: localFeedLoader)))
     }
 
