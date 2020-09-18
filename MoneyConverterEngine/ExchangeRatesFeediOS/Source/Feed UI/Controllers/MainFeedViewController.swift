@@ -28,15 +28,27 @@ public final class MainFeedViewController: UIViewController, UITableViewDelegate
         viewModel?.load()
     }
     
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tableView.sizeTableHeaderToFit()
+    }
+    
     private func bind() {
         viewModel?.onLoadingStateChange = { [weak self] isLoading in
             if isLoading {
                 self?.errorView?.hideMessage()
+                var frame = CGRect.zero
+                frame.size.height = .leastNormalMagnitude
+                self?.tableView.tableHeaderView = UIView(frame: frame)
             }            
         }
         
         viewModel?.onErrorLoad = { [weak self] errorMessage in
             self?.errorView?.show(message: errorMessage)
+            if let errorView = self?.errorView {
+                self?.tableView.tableHeaderView = errorView
+                self?.tableView.sizeTableHeaderToFit()
+            }
         }
     }
     

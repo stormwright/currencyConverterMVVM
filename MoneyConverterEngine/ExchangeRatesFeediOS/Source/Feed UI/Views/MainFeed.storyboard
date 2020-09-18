@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NUP-9k-wEm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="NUP-9k-wEm">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="ECu-Tw-qbk" customClass="ErrorView" customModule="ExchangeRatesFeediOS" customModuleProvider="target">
@@ -40,11 +40,12 @@
                                     </constraints>
                                     <connections>
                                         <outlet property="label" destination="5We-Sc-PIr" id="cEj-m4-qWF"/>
+                                        <outletCollection property="gestureRecognizers" destination="d4D-Kc-9u6" appends="YES" id="n8S-GX-rxk"/>
                                     </connections>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExchangeRateCell" rowHeight="112" id="zi7-S6-dJy" customClass="ExchangeRateCell" customModule="ExchangeRatesFeediOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="112"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="414" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zi7-S6-dJy" id="SRP-qr-7IU">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
@@ -76,7 +77,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemTealColor"/>
                                             <constraints>
                                                 <constraint firstItem="0Oy-mo-Ltq" firstAttribute="leading" secondItem="SRP-qr-7IU" secondAttribute="leadingMargin" id="11q-Bc-KGK"/>
                                                 <constraint firstItem="8kB-i3-uDz" firstAttribute="leading" secondItem="SRP-qr-7IU" secondAttribute="leadingMargin" id="4Fn-dl-fac"/>
@@ -107,12 +107,11 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ztq-N9-G9K"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NUP-9k-wEm" firstAttribute="top" secondItem="Ztq-N9-G9K" secondAttribute="top" id="0tG-yI-TK2"/>
-                            <constraint firstItem="Ztq-N9-G9K" firstAttribute="trailing" secondItem="NUP-9k-wEm" secondAttribute="trailing" id="Jtb-b0-yP1"/>
-                            <constraint firstItem="NUP-9k-wEm" firstAttribute="leading" secondItem="Ztq-N9-G9K" secondAttribute="leading" id="w6a-TN-1OK"/>
-                            <constraint firstItem="Ztq-N9-G9K" firstAttribute="bottom" secondItem="NUP-9k-wEm" secondAttribute="bottom" id="xaf-uC-oJg"/>
+                            <constraint firstItem="NUP-9k-wEm" firstAttribute="top" secondItem="Ztq-N9-G9K" secondAttribute="top" id="AU5-Nz-W6H"/>
+                            <constraint firstItem="NUP-9k-wEm" firstAttribute="trailing" secondItem="Ztq-N9-G9K" secondAttribute="trailing" id="Igg-3Y-D5y"/>
+                            <constraint firstItem="NUP-9k-wEm" firstAttribute="leading" secondItem="Ztq-N9-G9K" secondAttribute="leading" id="fzk-fg-Gzf"/>
+                            <constraint firstItem="NUP-9k-wEm" firstAttribute="bottom" secondItem="Ztq-N9-G9K" secondAttribute="bottom" id="g8e-zX-Uoe"/>
                         </constraints>
                     </view>
                     <connections>
@@ -121,6 +120,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qav-nW-nwL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="d4D-Kc-9u6">
+                    <connections>
+                        <action selector="hideMessage" destination="ECu-Tw-qbk" id="kDw-1F-hz6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="73.913043478260875" y="162.72321428571428"/>
         </scene>
@@ -128,9 +132,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
