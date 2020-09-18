@@ -23,7 +23,7 @@ final class ExchangeRateCellViewModel<Image> {
     }
     
     var exchangeRate: String {
-        return String(format: "%f", model.rate)
+        return String(format: "%.4f", model.rate)
     }
     
     var date: String {
