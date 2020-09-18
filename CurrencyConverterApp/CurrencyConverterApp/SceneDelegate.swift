@@ -47,7 +47,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func configureWindow() {
         let url = URL(string: "https://pastebin.com/raw/gg4BAg5z")!
         let remoteRatesFeedLoader = RemoteRatesFeedLoader(url: url, client: httpClient)
-        window?.rootViewController = UINavigationController(rootViewController: MainFeedUIComposer.mainFeedComposedWith(ratesLoader: remoteRatesFeedLoader))
+        window?.rootViewController = UINavigationController(
+            rootViewController: MainFeedUIComposer.mainFeedComposedWith(
+                ratesLoader: RatesFeedLoaderWithFallbackComposite(
+                    primary: remoteRatesFeedLoader,
+                    fallback: localFeedLoader)))
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
