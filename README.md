@@ -1,4 +1,4 @@
-*# Currency Converter iOS app. Model-View-View-Model design pattern. No-storyboard.
+# Currency Converter iOS app. Model-View-View-Model design pattern. No-storyboard.
 Basic Currency Converter using the MVVM design pattern and the TDD approach.
 This is a template app that can be adapted to the required business cases.
 Fully commented codebase from set-up to release.
