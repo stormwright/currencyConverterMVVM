@@ -1,5 +1,5 @@
-# Currency Converter iOS app. Model-View-View-Model design pattern. No-storyboard.
-Basic Currency Converter using the MVVM design pattern and the TDD approach.
+# Currency Converter iOS app. Model-View-View-Model design pattern. Test-Driven Development.
+Basic Currency Converter using the MVVM design pattern, TDD approach and non-segue routing.
 This is a template app that can be adapted to the required business cases.
 Fully commented codebase from set-up to release.
 Swift. iOS 13.
@@ -9,7 +9,7 @@ Swift. iOS 13.
 The app is built using the modular approach that enables to building robust and scalable iOS apps.
 S.O.L.I.D. based app.
 
-The engine, core functionality, of the app is held on its own separate project, framework.
+The engine, core functionality, UI presentation of the app are held on a separate project.
 
 # Use cases
 * Load feed from remote
