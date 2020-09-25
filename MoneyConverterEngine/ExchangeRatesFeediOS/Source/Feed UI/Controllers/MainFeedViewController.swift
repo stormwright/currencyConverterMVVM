@@ -20,6 +20,8 @@ public final class MainFeedViewController: UIViewController, UITableViewDelegate
         }
     }
     
+    var router: MainFeedRouter?
+    
     var tableModel = [ExchangeRateCellController]() {
         didSet { tableView.reloadData() }
     }
@@ -31,6 +33,13 @@ public final class MainFeedViewController: UIViewController, UITableViewDelegate
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.tableView.sizeTableHeaderToFit()
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        if let selectionIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectionIndexPath, animated: animated)
+        }
+        super.viewDidAppear(animated)
     }
     
     private func bind() {
@@ -58,6 +67,10 @@ public final class MainFeedViewController: UIViewController, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cellController(forRowAt: indexPath).view(in: tableView)
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.route(to: .detailedRate(quoteCurrency: cellController(forRowAt: indexPath).quoteCurrency, rate: cellController(forRowAt: indexPath).exchangeRate))
     }
     
     private func cellController(forRowAt indexPath: IndexPath) -> ExchangeRateCellController {

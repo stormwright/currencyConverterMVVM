@@ -13,6 +13,14 @@ final class ExchangeRateCellController {
         self.viewModel = viewModel
     }
     
+    var quoteCurrency: String {
+        return viewModel.currencyCode
+    }
+    
+    var exchangeRate: String {
+        return viewModel.exchangeRate
+    }
+    
     func view(in tableView: UITableView) -> UITableViewCell {
         let cell = bound(tableView.dequeueReusableCell())
         return cell

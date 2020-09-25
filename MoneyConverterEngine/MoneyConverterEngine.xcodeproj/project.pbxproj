@@ -13,7 +13,12 @@
 		1612337D2510D2FF00263D40 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612337C2510D2FF00263D40 /* UITableView+Dequeueing.swift */; };
 		1612337F2510D3DC00263D40 /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1612337E2510D3DC00263D40 /* UIImageView+Animations.swift */; };
 		161233812510E75300263D40 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161233802510E75300263D40 /* MainFeedViewController.swift */; };
-		1629FB61251CB68B00FFA975 /* ExchangeCalculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1629FB60251CB68B00FFA975 /* ExchangeCalculator.storyboard */; };
+		1629FB61251CB68B00FFA975 /* DetailedView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1629FB60251CB68B00FFA975 /* DetailedView.storyboard */; };
+		1629FB77251CC36500FFA975 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1629FB76251CC36500FFA975 /* Router.swift */; };
+		1629FB7F251CCFCB00FFA975 /* MainFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1629FB7E251CCFCB00FFA975 /* MainFeedRouter.swift */; };
+		1629FB87251CD7CE00FFA975 /* FeedViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1629FB86251CD7CE00FFA975 /* FeedViewControllersFactory.swift */; };
+		1629FB8F251CDE1900FFA975 /* DetailedRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1629FB8E251CDE1900FFA975 /* DetailedRateViewController.swift */; };
+		1629FB97251CDE9000FFA975 /* DetailedRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1629FB96251CDE9000FFA975 /* DetailedRateViewModel.swift */; };
 		163CE04925068880002E9025 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04825068880002E9025 /* SharedTestHelpers.swift */; };
 		163CE04C25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04B25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift */; };
 		163CE04F2507C23C002E9025 /* RatesFeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CE04E2507C23C002E9025 /* RatesFeedStoreSpy.swift */; };
@@ -43,6 +48,7 @@
 		163E5519250F9D8A0039D048 /* MainFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5518250F9D8A0039D048 /* MainFeedViewModel.swift */; };
 		163E551B250FA2E50039D048 /* MainFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 163E551A250FA2E50039D048 /* MainFeed.storyboard */; };
 		163E551D250FAFC00039D048 /* MainFeed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E551C250FAFBF0039D048 /* MainFeed.xcassets */; };
+		164640BB251E288000026899 /* DetailedRateViewUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164640BA251E288000026899 /* DetailedRateViewUIComposer.swift */; };
 		165E206E2512198300AFB974 /* MainFeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E206D2512198300AFB974 /* MainFeedUIComposer.swift */; };
 		165E207025121E6D00AFB974 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E206F25121E6D00AFB974 /* MainQueueDispatchDecorator.swift */; };
 		165E20712512202A00AFB974 /* MainFeed.strings in Resources */ = {isa = PBXBuildFile; fileRef = 165E20732512202A00AFB974 /* MainFeed.strings */; };
@@ -51,6 +57,7 @@
 		16DDC2A624E6C754006D508D /* MoneyConverterEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DDC29C24E6C754006D508D /* MoneyConverterEngine.framework */; };
 		16DDC2B724E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */; };
 		16DDC2BA24E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */; };
+		16E2240E251DF57300CB28BE /* UILabel+AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E2240D251DF57300CB28BE /* UILabel+AttributedText.swift */; };
 		1B7402FB24FAD40E001384AF /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7402FA24FAD40E001384AF /* URLSessionHTTPClientTests.swift */; };
 		1B7402FE24FAE239001384AF /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7402FD24FAE239001384AF /* HTTPClientSpy.swift */; };
 		1B74030024FAE6A7001384AF /* RatesFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7402FF24FAE6A7001384AF /* RatesFeedLoader.swift */; };
@@ -109,7 +116,12 @@
 		1612337C2510D2FF00263D40 /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
 		1612337E2510D3DC00263D40 /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
 		161233802510E75300263D40 /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
-		1629FB60251CB68B00FFA975 /* ExchangeCalculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeCalculator.storyboard; sourceTree = "<group>"; };
+		1629FB60251CB68B00FFA975 /* DetailedView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailedView.storyboard; sourceTree = "<group>"; };
+		1629FB76251CC36500FFA975 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		1629FB7E251CCFCB00FFA975 /* MainFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedRouter.swift; sourceTree = "<group>"; };
+		1629FB86251CD7CE00FFA975 /* FeedViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewControllersFactory.swift; sourceTree = "<group>"; };
+		1629FB8E251CDE1900FFA975 /* DetailedRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRateViewController.swift; sourceTree = "<group>"; };
+		1629FB96251CDE9000FFA975 /* DetailedRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRateViewModel.swift; sourceTree = "<group>"; };
 		163CE04825068880002E9025 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		163CE04B25068DFF002E9025 /* CacheRatesFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRatesFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		163CE04E2507C23C002E9025 /* RatesFeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFeedStoreSpy.swift; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 		163E5518250F9D8A0039D048 /* MainFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewModel.swift; sourceTree = "<group>"; };
 		163E551A250FA2E50039D048 /* MainFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainFeed.storyboard; sourceTree = "<group>"; };
 		163E551C250FAFBF0039D048 /* MainFeed.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainFeed.xcassets; sourceTree = "<group>"; };
+		164640BA251E288000026899 /* DetailedRateViewUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRateViewUIComposer.swift; sourceTree = "<group>"; };
 		165E206D2512198300AFB974 /* MainFeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedUIComposer.swift; sourceTree = "<group>"; };
 		165E206F25121E6D00AFB974 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		165E20722512202A00AFB974 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainFeed.strings; sourceTree = "<group>"; };
@@ -151,6 +164,7 @@
 		16DDC2AC24E6C754006D508D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16DDC2B624E6D1C7006D508D /* LoadRatesFeedFromRemoteUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadRatesFeedFromRemoteUseCases.swift; sourceTree = "<group>"; };
 		16DDC2B924E6D280006D508D /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		16E2240D251DF57300CB28BE /* UILabel+AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+AttributedText.swift"; sourceTree = "<group>"; };
 		1B7402FA24FAD40E001384AF /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		1B7402FD24FAE239001384AF /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		1B7402FF24FAE6A7001384AF /* RatesFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesFeedLoader.swift; sourceTree = "<group>"; };
@@ -227,6 +241,7 @@
 				1612337C2510D2FF00263D40 /* UITableView+Dequeueing.swift */,
 				1612337E2510D3DC00263D40 /* UIImageView+Animations.swift */,
 				16729AA52514CD7800EB0B73 /* UITableView+HeaderSizing.swift */,
+				16E2240D251DF57300CB28BE /* UILabel+AttributedText.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -340,6 +355,7 @@
 			children = (
 				163E5518250F9D8A0039D048 /* MainFeedViewModel.swift */,
 				161233792510BC3700263D40 /* ExchangeRateCellViewModel.swift */,
+				1629FB96251CDE9000FFA975 /* DetailedRateViewModel.swift */,
 				1BFB79212510FB5100EDB9B5 /* Localized.swift */,
 				165E20732512202A00AFB974 /* MainFeed.strings */,
 			);
@@ -360,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				165E206D2512198300AFB974 /* MainFeedUIComposer.swift */,
+				164640BA251E288000026899 /* DetailedRateViewUIComposer.swift */,
 				165E206F25121E6D00AFB974 /* MainQueueDispatchDecorator.swift */,
 			);
 			path = Composers;
@@ -370,6 +387,7 @@
 			children = (
 				161233772510BBC000263D40 /* ExchangeRateCellController.swift */,
 				161233802510E75300263D40 /* MainFeedViewController.swift */,
+				1629FB8E251CDE1900FFA975 /* DetailedRateViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -381,7 +399,7 @@
 				161233752510BA9E00263D40 /* ExchangeRateCell.swift */,
 				1BFB791F2510F33C00EDB9B5 /* ErrorView.swift */,
 				163E551A250FA2E50039D048 /* MainFeed.storyboard */,
-				1629FB60251CB68B00FFA975 /* ExchangeCalculator.storyboard */,
+				1629FB60251CB68B00FFA975 /* DetailedView.storyboard */,
 				163E551C250FAFBF0039D048 /* MainFeed.xcassets */,
 			);
 			path = Views;
@@ -420,6 +438,8 @@
 		163E5515250F94CE0039D048 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				1629FB7E251CCFCB00FFA975 /* MainFeedRouter.swift */,
+				1629FB86251CD7CE00FFA975 /* FeedViewControllersFactory.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -519,6 +539,7 @@
 				1B7402FF24FAE6A7001384AF /* RatesFeedLoader.swift */,
 				1B74030124FAE6E0001384AF /* FeedRate.swift */,
 				163CE0572507C39C002E9025 /* FeedCache.swift */,
+				1629FB76251CC36500FFA975 /* Router.swift */,
 			);
 			path = RatesFeedFeature;
 			sourceTree = "<group>";
@@ -738,7 +759,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165E20712512202A00AFB974 /* MainFeed.strings in Resources */,
-				1629FB61251CB68B00FFA975 /* ExchangeCalculator.storyboard in Resources */,
+				1629FB61251CB68B00FFA975 /* DetailedView.storyboard in Resources */,
 				163E551D250FAFC00039D048 /* MainFeed.xcassets in Resources */,
 				163E551B250FA2E50039D048 /* MainFeed.storyboard in Resources */,
 			);
@@ -790,15 +811,21 @@
 			files = (
 				165E207025121E6D00AFB974 /* MainQueueDispatchDecorator.swift in Sources */,
 				165E206E2512198300AFB974 /* MainFeedUIComposer.swift in Sources */,
+				1629FB87251CD7CE00FFA975 /* FeedViewControllersFactory.swift in Sources */,
 				161233762510BA9E00263D40 /* ExchangeRateCell.swift in Sources */,
 				1612337A2510BC3700263D40 /* ExchangeRateCellViewModel.swift in Sources */,
 				161233782510BBC000263D40 /* ExchangeRateCellController.swift in Sources */,
 				161233812510E75300263D40 /* MainFeedViewController.swift in Sources */,
 				16729AA62514CD7800EB0B73 /* UITableView+HeaderSizing.swift in Sources */,
 				1BFB79222510FB5100EDB9B5 /* Localized.swift in Sources */,
+				1629FB8F251CDE1900FFA975 /* DetailedRateViewController.swift in Sources */,
+				1629FB97251CDE9000FFA975 /* DetailedRateViewModel.swift in Sources */,
 				1612337F2510D3DC00263D40 /* UIImageView+Animations.swift in Sources */,
+				1629FB7F251CCFCB00FFA975 /* MainFeedRouter.swift in Sources */,
 				1612337D2510D2FF00263D40 /* UITableView+Dequeueing.swift in Sources */,
+				16E2240E251DF57300CB28BE /* UILabel+AttributedText.swift in Sources */,
 				163E5519250F9D8A0039D048 /* MainFeedViewModel.swift in Sources */,
+				164640BB251E288000026899 /* DetailedRateViewUIComposer.swift in Sources */,
 				1BFB79202510F33C00EDB9B5 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -828,6 +855,7 @@
 				163CE0512507C2AA002E9025 /* LocalRatesFeedLoader.swift in Sources */,
 				1BB82F612507D46100E2D911 /* RatesFeedCachePolicy.swift in Sources */,
 				163CE076250A37B5002E9025 /* ManagedCache.swift in Sources */,
+				1629FB77251CC36500FFA975 /* Router.swift in Sources */,
 				1B74031124FAE943001384AF /* URLSessionHTTPClient.swift in Sources */,
 				163CE072250A2F21002E9025 /* RatesFeedStore.xcdatamodeld in Sources */,
 				1B74030624FAE7D1001384AF /* RemoteRatesFeedLoader.swift in Sources */,
